@@ -1,0 +1,77 @@
+/* Empty. Add your own CSS if you like */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background:
+    url(../img/001_start/PNG/floor-2.png) center bottom no-repeat,
+    url(../img/001_start/PNG/clouds.png) center 15% no-repeat,
+    url(../img/001_start/PNG/sky.png) repeat;
+
+  background-size: contain, contain;
+  text-align: center;
+}
+
+header {
+  height: 90px;
+  line-height: 90px;
+  background-color: rgba(255,255,255, .9);
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+#tama {
+  position: absolute;
+  left: calc(50% - 157px);
+  top: calc(50% - 157px);
+  max-width: 100%;
+}
+
+.tamagotchi-start {
+  width: 227px;
+  height: 71px;
+  background: url(../img/001_start/PNG/btn_play.png);
+  background-size: contain;
+  position: absolute;
+  top: 75%;
+  left: calc(50% - 113px);
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  height: 15%;
+  width: 100%;
+  background: #fff url(../img/002_interface/PNG/bottom_line.png) top center repeat-x;
+  padding-top: 16px;
+  padding-bottom: 5px;
+}
+
+footer .tamagotchi-button {
+  width: 33%;
+  float: left;
+  height: 100%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+footer .tamagotchi-button.eat {
+  background-image: url(../img/002_interface/PNG/eat.png);
+}
+
+footer .tamagotchi-button.sleep {
+  background-image: url(../img/002_interface/PNG/sleep.png);
+}
+
+footer .tamagotchi-button.wake_up {
+  background-image: url(../img/002_interface/PNG/wake_up.png);
+}
+
+footer .tamagotchi-button.play {
+  background-image: url(../img/002_interface/PNG/play.png);
+}

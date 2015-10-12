@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Tamagotchi</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/tamagotchi.controller.js"></script>
+    <script src="js/tamagotchi.service.js"></script>
+  </head>
+  <body ng-app="tamagotchi" ng-controller="tamagotchiController">
+    <header>Slicegotchi</header>
+    <img id="tama" ng-src="img/{{tamagotchi.image}}">
+
+    <div class="tamagotchi-start" ng-click="start()" ng-hide="started"></div>
+
+    <footer ng-show="started">
+      <div class="tamagotchi-button eat" ng-click="zustand('essend')"></div>
+      <div class="tamagotchi-button" ng-class="{ sleep: tamagotchi.zustand != 'schlafend', wake_up: tamagotchi.zustand == 'schlafend' }" ng-click="zustand('schlafend')"></div>
+      <div class="tamagotchi-button play" ng-click="zustand('spielend')"></div>
+    </footer>
+  </body>
+</html>
