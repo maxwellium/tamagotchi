@@ -6,6 +6,7 @@ angular
 
     $scope.start = function(){
       $scope.started = true;
+      tamagotchiService.start();
     };
 
     $scope.zustand = tamagotchiService.zustandAendern;

@@ -28,7 +28,7 @@
     <img id="tama" ng-src="img/{{tamagotchi.image}}">
 
     <div class="tamagotchi-start" ng-click="start()" ng-hide="started"></div>
-
+    <span>{{ tamagotchi.zustand }}</span>
     <footer ng-show="started">
       <div class="tamagotchi-button eat" ng-click="zustand('essend')"></div>
       <div class="tamagotchi-button" ng-class="{ sleep: tamagotchi.zustand != 'schlafend', wake_up: tamagotchi.zustand == 'schlafend' }" ng-click="zustand('schlafend')"></div>

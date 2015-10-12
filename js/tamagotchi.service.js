@@ -1,6 +1,6 @@
 angular
   .module('tamagotchi')
-  .service('tamagotchiService', function( $interval ){
+  .service('tamagotchiService', function( $interval, $timeout ){
 
     var tamagotchi = {
       zustand    : 'normal',
@@ -19,6 +19,16 @@ angular
       },
       spielend : {
         images : ['006_play/PNG/play_1.png', '006_play/PNG/play_2.png']
+      },
+
+      hungrig : {
+        images : ['007_hungry/PNG/hungry.png']
+      },
+      muede : {
+        images : ['008_tired/PNG/tired.png']
+      },
+      langweilig : {
+        images : ['009_bored/PNG/bored.png']
       }
     };
 
@@ -32,6 +42,13 @@ angular
       } else {
         tamagotchi.zustand = zustand;
       }
+    };
+
+
+    tamagotchi.start = function(){
+      $timeout(function(){
+        tamagotchi.zustand = 'hungrig';
+      }, 5000);
     };
 
 

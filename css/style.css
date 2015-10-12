@@ -1,4 +1,6 @@
-/* Empty. Add your own CSS if you like */
+html {
+  max-width: 720px;
+}
 
 html, body {
   height: 100%;
@@ -49,6 +51,7 @@ footer {
   background: #fff url(../img/002_interface/PNG/bottom_line.png) top center repeat-x;
   padding-top: 16px;
   padding-bottom: 5px;
+  max-width: 720px;
 }
 
 footer .tamagotchi-button {
