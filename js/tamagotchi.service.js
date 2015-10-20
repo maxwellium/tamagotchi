@@ -52,7 +52,7 @@ angular
 
       $interval(function(){
         if ( 'schlafend' === tamagotchi.zustand ) {
-          tamagotchi.muede = Math.min( 0, tamagotchi.muede -2 );
+          tamagotchi.muede = Math.max( 0, tamagotchi.muede -2 );
         } else if ( 'normal' === tamagotchi.zustand ) {
           tamagotchi.muede++;
         }
@@ -65,7 +65,7 @@ angular
 
       $interval(function(){
         if ( 'essend' === tamagotchi.zustand ) {
-          tamagotchi.hungrig = Math.min( 0, tamagotchi.hungrig -2 );
+          tamagotchi.hungrig = Math.max( 0, tamagotchi.hungrig -2 );
         } else if ( 'normal' === tamagotchi.zustand ) {
           tamagotchi.hungrig++;
         }
@@ -78,7 +78,7 @@ angular
 
       $interval(function(){
         if ( 'spielend' === tamagotchi.zustand ) {
-          tamagotchi.langweilig = Math.min( 0, tamagotchi.langweilig -2 );
+          tamagotchi.langweilig = Math.max( 0, tamagotchi.langweilig -2 );
         } else if ( 'normal' === tamagotchi.zustand ) {
           tamagotchi.langweilig++;
         }
