@@ -4,6 +4,9 @@ angular
 
     var tamagotchi = {
       zustand    : 'normal',
+      hungrig    : 0,
+      muede      : 0,
+      langweilig : 0,
       imageIndex : 0
     };
 
@@ -46,9 +49,33 @@ angular
 
 
     tamagotchi.start = function(){
-      $timeout(function(){
-        tamagotchi.zustand = 'hungrig';
-      }, 5000);
+
+      $interval(function(){
+        if ( 'schlafend' === tamagotchi.zustand && tamagotchi.muede > 0) {
+          tamagotchi.muede = tamagotchi.muede -2;
+        } else if ( 'normal' === tamagotchi.zustand ) {
+          tamagotchi.muede++;
+        }
+
+        if ( tamagotchi.muede > 10 && ('normal' == tamagotchi.zustand) ) {
+          tamagotchi.muede = 10;
+          tamagotchi.zustand = 'muede';
+        }
+      }, 1000);
+
+      $interval(function(){
+        if ( 'essend' === tamagotchi.zustand && tamagotchi.hungrig > 0) {
+          tamagotchi.hungrig = tamagotchi.hungrig -2;
+        } else if ( 'normal' === tamagotchi.zustand ) {
+          tamagotchi.hungrig++;
+        }
+
+        if ( tamagotchi.hungrig > 10 && ('normal' == tamagotchi.zustand) ) {
+          tamagotchi.hungrig = 10;
+          tamagotchi.zustand = 'hungrig';
+        }
+      }, 2000);
+
     };
 
 

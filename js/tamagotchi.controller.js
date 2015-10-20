@@ -1,6 +1,6 @@
 angular
   .module('tamagotchi')
-  .controller('tamagotchiController', function( $scope, tamagotchiService ){
+  .controller('tamagotchiController', function( $scope, $interval, tamagotchiService ){
 
     $scope.tamagotchi = tamagotchiService;
 
@@ -11,4 +11,7 @@ angular
 
     $scope.zustand = tamagotchiService.zustandAendern;
 
+    $interval(function(){
+      $scope.night = !$scope.night;
+    }, 60000);
   });

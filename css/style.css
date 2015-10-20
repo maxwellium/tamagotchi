@@ -33,6 +33,7 @@ header {
 }
 
 .tamagotchi-start {
+  z-index: 101;
   width: 227px;
   height: 71px;
   background: url(../img/001_start/PNG/btn_play.png);
@@ -44,6 +45,7 @@ header {
 
 
 footer {
+  z-index: 101;
   position: absolute;
   bottom: 0px;
   height: 15%;
@@ -77,4 +79,23 @@ footer .tamagotchi-button.wake_up {
 
 footer .tamagotchi-button.play {
   background-image: url(../img/002_interface/PNG/play.png);
+}
+
+.night {
+  z-index: 100;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.7);
+}
+
+.info {
+  z-index: 101;
+}
+
+.info.bright {
+  color: #fff;
+  position: absolute;
 }

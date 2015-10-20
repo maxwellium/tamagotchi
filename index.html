@@ -24,11 +24,12 @@
     <script src="js/tamagotchi.service.js"></script>
   </head>
   <body ng-app="tamagotchi" ng-controller="tamagotchiController">
-    <header>Slicegotchi</header>
+    <div class="night" ng-show="night"></div>
+    <header>Hackergotchie</header>
     <img id="tama" ng-src="img/{{tamagotchi.image}}">
 
     <div class="tamagotchi-start" ng-click="start()" ng-hide="started"></div>
-    <span>{{ tamagotchi.zustand }}</span>
+    <span class="info" ng-class="{bright: night}">{{ tamagotchi.zustand }} m:{{ tamagotchi.muede }} h:{{ tamagotchi.hungrig }} l:{{ tamagotchi.langweilig }}</span>
     <footer ng-show="started">
       <div class="tamagotchi-button eat" ng-click="zustand('essend')"></div>
       <div class="tamagotchi-button" ng-class="{ sleep: tamagotchi.zustand != 'schlafend', wake_up: tamagotchi.zustand == 'schlafend' }" ng-click="zustand('schlafend')"></div>
