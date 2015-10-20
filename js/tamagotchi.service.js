@@ -51,8 +51,8 @@ angular
     tamagotchi.start = function(){
 
       $interval(function(){
-        if ( 'schlafend' === tamagotchi.zustand && tamagotchi.muede > 0) {
-          tamagotchi.muede = tamagotchi.muede -2;
+        if ( 'schlafend' === tamagotchi.zustand ) {
+          tamagotchi.muede = Math.min( 0, tamagotchi.muede -2 );
         } else if ( 'normal' === tamagotchi.zustand ) {
           tamagotchi.muede++;
         }
@@ -64,8 +64,8 @@ angular
       }, 1000);
 
       $interval(function(){
-        if ( 'essend' === tamagotchi.zustand && tamagotchi.hungrig > 0) {
-          tamagotchi.hungrig = tamagotchi.hungrig -2;
+        if ( 'essend' === tamagotchi.zustand ) {
+          tamagotchi.hungrig = Math.min( 0, tamagotchi.hungrig -2 );
         } else if ( 'normal' === tamagotchi.zustand ) {
           tamagotchi.hungrig++;
         }
@@ -75,6 +75,19 @@ angular
           tamagotchi.zustand = 'hungrig';
         }
       }, 2000);
+
+      $interval(function(){
+        if ( 'spielend' === tamagotchi.zustand ) {
+          tamagotchi.langweilig = Math.min( 0, tamagotchi.langweilig -2 );
+        } else if ( 'normal' === tamagotchi.zustand ) {
+          tamagotchi.langweilig++;
+        }
+
+        if ( tamagotchi.langweilig > 10 && ('normal' == tamagotchi.zustand) ) {
+          tamagotchi.langweilig = 10;
+          tamagotchi.zustand = 'langweilig';
+        }
+      }, 3000);
 
     };
 
