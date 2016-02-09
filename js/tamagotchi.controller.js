@@ -13,5 +13,5 @@ angular
 
     $interval(function(){
       $scope.night = !$scope.night;
-    }, 60000);
+    }, 10000);
   });
